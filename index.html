@@ -1,78 +1,336 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Instagram front page clone</title>
-        <style>
-        </style>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                <li><a></a></li>
-                
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Instagram front page clone</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 60px 2fr 300px;
+        }
+        .main-nav-list{
+            display:flex;
+            flex-direction: column;
+            list-style: none;
+            padding:0;
+            margin:0px;
+            margin-left:10px;
+           margin-top:10px;
+
+            height:100vh;
+        gap: 15px;
+        position:fixed;
+        width:60px;
 
 
-            </ul>
 
 
-        </nav>
-        <section class="stories">
-<ul>
-    <li>
-        <a>
-            <img>
-        </a>
-    </li>
-    <li>
-        <a>
-            <img>
-        </a>
-    </li>
-</ul>
-        </section>
 
-        <main>
-            <section class="feed">
-                <article class="post"></article>
-                <article class="post"></article>
-                <article class="post"></article>              
-            </section>
-            
-        </main>
-<aside>
-    <section class="profile"></section>
-    <section class="suggested">
-        <ul>
-            <li> 
-            <img>
-            <h2>
-
-            </h2>
-            <img>
-            <p class="followed by">
-
-            </p>
-</li>
-
-        </ul>
-    </section>
-</aside>
-<footer>
-    <ul>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
+    
+        }
+      
         
-    </ul>
-</footer>
+        .second-section-nav{
 
-<button></button>
+          display:flex;
+            flex-direction: column;
+            gap:15px;
 
-    </body>
+            
+
+        }
+        .gap1{
+  display:flex;
+            flex-direction: column;
+    gap: clamp(15px, 5vh, 50px);
+        }
+         .third-section-nav{
+            display:flex;
+            flex-direction: column;
+            gap:15px;
+            margin-bottom:30px;
+        }
+       .stories-container{
+        display:flex;
+                    list-style: none;
+gap:20px;
+padding:0px;
+       }
+      .second-column{
+
+        display:flex;
+
+                flex-direction: column;
+                align-items:center;
+      }
+        .arrow-container{
+            position:relative;
+        }
+        .arrow-right{
+            position:absolute;
+           right:0px;
+           top:30px;
+            transform:translate(0px, -50%);
+            border-radius:30px;
+            border-width:0px;
+background-color:rgba(255,255,255,.7);
+        }
+       .third-column{
+       }
+    </style>
+
+    <!-- so for the whole thing  it should be a grid so the navbar it shoul dbe like 5% thean the 
+     stories with the main content article posts should be like let's say 60% then the the rest
+     which is the profile suggested thing is 35%. So basically my plan is to wrap these in divs
+     so the nav section seperate, the section class stories and feeds and main in a div
+     and then the rest of hte stuff, except for the button in a div, than the entire thing in a div
+     and do the top div as a class and obviously give each div a class and hten do like the grid
+     template columns like 5% 60% and 30% , what do you think on this? I have a quesiton though
+     do you think this is the best method start to layout the strucutre, using gridtemplatecolumns
+     also what about like do i use the divs to wrap them around for the grid styling and stuff
+     or should I just use the existing like section or main or nav and that type of stuff to use 
+     for the grid stuff. I think the extra divs and sectioning it out that way for the app is
+     logical at least to me, idk what do you think?
+     -->
+    <!--
+     -->
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="first-column">
+            <nav class="main-navigation">
+                <ul class="main-nav-list">
+                    <!--Usually <a> would have an href to somewhere but I'm just cloning this page-->
+                    <!--Some of the icons should be like buttons instead of links like post, but
+                for my cloning purposes I'm going to stick with all the same links , I'm just 
+                cloning this app-->
+<div class="gap1"> 
+                    <li><a><i class="material-icons first-section-nav">cloud</i></a></li>
+                    <div class="second-section-nav"> 
+                        
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    </div>
+                    </div>
+                    <div class="third-section-nav">
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    <li><a><i class="material-icons">cloud</i></a></li>
+                    </div>
+
+
+                </ul>
+
+            </nav>
+        </div>
+        <div class="second-column">
+            <section class="stories">
+                <ul class="stories-container">
+                    <li>
+                        <a>
+                            <img class="story-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:60px; height:60px">
+                                </a>
+                    </li>
+
+                    <li>
+                        <a>
+                            <img class="story-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:60px; height:60px">
+       
+                    </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="story-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:60px; height:60px">
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img class="story-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:60px; height:60px">
+                                                    </a>
+
+                    </li>
+                    <li>
+                        <a>
+                            <img class="story-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:60px; height:60px">
+                                                    </a>
+
+                    </li>
+                    <li>
+                        <a>
+                            <div class="arrow-container"> 
+                            <img class="story-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:60px; height:60px">
+                            </a>
+                                <button class="arrow-right">r</button>
+                                </div>
+                    </li>
+                </ul>
+            </section>
+
+            <main>
+                <section class="feed">
+
+                    <article class="post">
+                        <header class="post-header">
+                            <img class="post-header-image" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:25px; height:25px">
+                            <a class="username-for-post">
+                                username
+                            </a>
+
+                            <span>.</span>
+                            <a>
+                                <time class="time-ago-posted">
+                                    3h
+                                </time>
+                            </a>
+                            <a class="location-for-post">New York City, New York</a>
+
+                            <button>...</button>
+                        </header>
+
+                        <img class="post-image" src="https://picsum.photos/seed/picsum/200/300" alt="Profile"
+                            style="width:400px; height:500px">
+                        <footer class="footer-for-post">
+                            <!--Normally wrap in button and get rid of the styling of buttons but I might skip
+        very confident easy to do and figure out-->
+                            <div class="footer-icon-container">
+                                <i class="material-icons footer-icon">cloud</i>
+                                <i class="material-icons footer-icon">cloud</i>
+                                <i class="material-icons footer-icon">cloud</i>
+
+                                <i class="material-icons footer-icon">cloud</i>
+
+
+                            </div>
+                            <p class="caption">
+                                <a class="post-footer-username">username</a>
+                                <span class="post-footer-caption">So sunny!</span>
+                            </p>
+
+                        </footer>
+                    </article>
+
+                </section>
+
+            </main>
+        </div>
+        <div class="third-column">
+            <aside>
+                <section class="profile">
+                    <img class="aside-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile"
+                        style="width:38px; height:38px">
+                    <a class="username-for-aside">username</a>
+                    <span class="name-for-username">
+                        firstname lastname
+                    </span>
+                    <button class="switch">
+                        Switch
+                    </button>
+                </section>
+                <section class="suggested">
+
+                    <header>
+                        <span class="suggested-for-you">Suggested for you</span>
+                        <a class="see-all">See all</a>
+
+                    </header>
+                    <ul>
+                        <li>
+                            <img class="aside-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:38px; height:38px">
+                            <a class="username-for-aside">username</a>
+                            <span class="name-for-username">
+                                firstname lastname
+                            </span>
+                            <button class="switch">
+                                Switch
+                            </button>
+                        </li>
+                        <li>
+                            <img class="aside-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:38px; height:38px">
+                            <a class="username-for-aside">username</a>
+                            <span class="name-for-username">
+                                firstname lastname
+                            </span>
+                            <button class="switch">
+                                Switch
+                            </button>
+                        </li>
+                        <li>
+                            <img class="aside-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:38px; height:38px">
+                            <a class="username-for-aside">username</a>
+                            <span class="name-for-username">
+                                firstname lastname
+                            </span>
+                            <button class="switch">
+                                Switch
+                            </button>
+                        </li>
+                        <li>
+                            <img class="aside-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:38px; height:38px">
+                            <a class="username-for-aside">username</a>
+                            <span class="name-for-username">
+                                firstname lastname
+                            </span>
+                            <button class="switch">
+                                Switch
+                            </button>
+                        </li>
+                        <li>
+                            <img class="aside-profile" src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                                alt="Profile" style="width:38px; height:38px">
+                            <a class="username-for-aside">username</a>
+                            <span class="name-for-username">
+                                firstname lastname
+                            </span>
+                            <button class="switch">
+                                Switch
+                            </button>
+                        </li>
+
+                    </ul>
+                </section>
+                <footer>
+                    <ul>
+                        <li><a>links</a></li>
+                        <li><a>links</a></li>
+                        <li><a>links</a></li>
+                        <li><a>links</a></li>
+                        <li><a>links</a></li>
+                        <li><a>links</a></li>
+                        <li><a>links</a></li>
+                        <li><a>links</a></li>
+                        <li><a>links</a></li>
+                        <li><a>links</a></li>
+
+
+                    </ul>
+
+                    <p>&copy; 2026 INSTAGRAM FROM META</p>
+                </footer>
+            </aside>
+
+        </div>
+    </div>
+
+    <button class="fixed-messages-btn">Messages</button>
+
+</body>
+
 </html>
